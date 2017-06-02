@@ -12,3 +12,4 @@ Makefile
 build
 cmake_install.cmake
 cmake-build-debug
+cpp-training.cbp
