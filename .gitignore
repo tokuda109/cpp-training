@@ -5,6 +5,8 @@
 .vscode/
 .idea/
 
+*.a
+
 CMakeFiles
 CMakeCache.txt
 Makefile
