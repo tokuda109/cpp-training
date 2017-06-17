@@ -9,7 +9,9 @@ int add(int a, int b) {
 
 int main(int argc, char **argv) {
 
-    boost::function<int(int, int)> f = add;
+    boost::function<int(int, int)> f;
+
+    f = &add;
 
     const int result = f(2, 3);
 
