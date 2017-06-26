@@ -11,7 +11,7 @@ macro(prepare_boost)
     set(Boost_USE_MULTITHREADED ON)
     set(Boost_USE_STATIC_RUNTIME OFF)
 
-    find_package(Boost REQUIRED COMPONENTS program_options)
+    find_package(Boost REQUIRED COMPONENTS program_options thread)
 
     if (Boost_FOUND)
         include_directories(${Boost_INCLUDE_DIRS})
