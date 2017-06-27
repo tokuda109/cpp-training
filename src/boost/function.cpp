@@ -14,5 +14,5 @@ TEST(boost_test_case, function_test_1) {
 
     const int result = f(2, 3);
 
-    EXPECT_EQ(result, 2);
+    EXPECT_EQ(result, 5);
 }
