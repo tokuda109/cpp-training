@@ -2,8 +2,10 @@
 cmake_minimum_required(VERSION 3.7.1 FATAL_ERROR)
 
 include(Boost)
+include(GTest)
 
 prepare_boost()
+prepare_gtest("boost")
 
 add_executable(boost_date_time date_time.cpp)
 add_executable(boost_function function.cpp)
