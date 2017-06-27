@@ -33,7 +33,7 @@ if (GTest_FOUND)
 endif()
 
 add_test(
-    NAME unittest
+    NAME cpp_test
     COMMAND cpp
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
