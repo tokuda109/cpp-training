@@ -13,5 +13,5 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 project(${PACKAGE_NAME})
 
-# add_subdirectory(src/boost)
+add_subdirectory(src/boost)
 add_subdirectory(src/cpp)

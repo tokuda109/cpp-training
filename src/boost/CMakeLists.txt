@@ -7,14 +7,33 @@ include(GTest)
 prepare_boost()
 prepare_gtest("boost")
 
-add_executable(boost_date_time date_time.cpp)
-add_executable(boost_function function.cpp)
-add_executable(boost_program_options program_options.cpp)
-add_executable(boost_thread thread.cpp)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
+
+link_directories(${GTEST_LIBRARIES})
+
+add_executable(boost ${SOURCES})
 
 if (Boost_FOUND)
-    target_link_libraries(boost_date_time ${Boost_LIBRARIES})
-    target_link_libraries(boost_function ${Boost_LIBRARIES})
-    target_link_libraries(boost_program_options ${Boost_LIBRARIES})
-    target_link_libraries(boost_thread ${Boost_LIBRARIES})
+    target_link_libraries(
+        boost
+        ${Boost_LIBRARIES}
+    )
 endif()
+
+if (GTest_FOUND)
+    target_link_libraries(
+        boost
+        gtest
+        gtest_main
+        gmock
+        gmock_main
+    )
+endif()
+
+add_test(
+    NAME unittest
+    COMMAND boost
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)

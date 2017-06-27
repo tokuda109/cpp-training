@@ -1,13 +1,12 @@
 
-#include <iostream>
-
 #include <boost/function.hpp>
+#include <gtest/gtest.h>
 
 int add(int a, int b) {
     return a + b;
 }
 
-int main(int argc, char **argv) {
+TEST(boost_test_case, function_test_1) {
 
     boost::function<int(int, int)> f;
 
@@ -15,7 +14,5 @@ int main(int argc, char **argv) {
 
     const int result = f(2, 3);
 
-    std::cout << result << std::endl;
-
-    return EXIT_SUCCESS;
+    EXPECT_EQ(result, 2);
 }
