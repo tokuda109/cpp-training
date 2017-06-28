@@ -15,3 +15,4 @@ project(${PACKAGE_NAME})
 
 add_subdirectory(src/boost)
 add_subdirectory(src/cpp)
+add_subdirectory(src/opencv)
