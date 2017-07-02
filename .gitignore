@@ -15,5 +15,6 @@ build
 cmake_install.cmake
 cmake-build-debug
 cpp-training.cbp
+CTestTestfile.cmake
 
 googletest-release-*
