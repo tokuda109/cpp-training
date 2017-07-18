@@ -42,6 +42,24 @@ int main(int argc, char **argv) {
         //   0, 0, 0, 0, 0, 0, 0, 0, 0
         // ]
         std::cout << mat3 << std::endl;
+
+        cv::Mat matOnes1 = cv::Mat::ones(3, 3, CV_8U) * 1;
+
+        // [
+        //   1, 1, 1,
+        //   1, 1, 1,
+        //   1, 1, 1
+        // ]
+        std::cout << matOnes1 << std::endl;
+
+        cv::Mat matOnes3 = cv::Mat::ones(3, 3, CV_8UC3) * 1;
+
+        // [
+        //   1, 0, 0, 1, 0, 0, 1, 0, 0,
+        //   1, 0, 0, 1, 0, 0, 1, 0, 0,
+        //   1, 0, 0, 1, 0, 0, 1, 0, 0
+        // ]
+        std::cout << matOnes3 << std::endl;
     }
 
     return EXIT_SUCCESS;
