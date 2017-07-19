@@ -27,7 +27,6 @@ int main(int argc, char **argv) {
         std::cout << opt << std::endl;
     } else {
         cv::Mat mat1 = cv::Mat::zeros(3, 3, CV_8U);
-        cv::Mat mat3 = cv::Mat::zeros(3, 3, CV_8UC3);
 
         // [
         //   0, 0, 0,
@@ -35,6 +34,8 @@ int main(int argc, char **argv) {
         //   0, 0, 0
         // ]
         std::cout << mat1 << std::endl;
+
+        cv::Mat mat3 = cv::Mat::zeros(3, 3, CV_8UC3);
 
         // [
         //   0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -60,6 +61,15 @@ int main(int argc, char **argv) {
         //   1, 0, 0, 1, 0, 0, 1, 0, 0
         // ]
         std::cout << matOnes3 << std::endl;
+
+        cv::Mat matInfo = cv::Mat::zeros(3, 6, CV_8U);
+
+        std::cout << "rows: " << matInfo.rows <<std::endl;
+        std::cout << "cols: " << matInfo.cols <<std::endl;
+        std::cout << "dims: " << matInfo.dims <<std::endl;
+        std::cout << "size: " << matInfo.size().width << ", " << matInfo.size().height << std::endl;
+        std::cout << "channels :" << matInfo.channels() << std::endl;
+        std::cout << "empty: " << (matInfo.empty() ? "true" : "false") << std::endl;
     }
 
     return EXIT_SUCCESS;
